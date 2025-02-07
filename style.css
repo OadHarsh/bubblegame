@@ -179,16 +179,11 @@ h1 {
     box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.6);
     text-align: center;
 }
-/* --- Responsive Design for Tablets (max-width: 768px) --- */
+
+/* --- Responsive Design --- */
 @media (max-width: 768px) {
     h1 {
-        font-size: 2.2rem;
-        margin-bottom: 15px;
-    }
-
-    #container {
-        height: 85vh;
-        padding: 5px;
+        font-size: 2.5rem;
     }
 
     #panel {
@@ -201,8 +196,8 @@ h1 {
     }
 
     .element {
-        width: 70px;
-        height: 70px;
+        width: 75px;
+        height: 75px;
     }
 
     .box {
@@ -212,89 +207,58 @@ h1 {
     }
 
     .bubble {
-        width: 65px;
-        height: 65px;
+        width: 70px;
+        height: 70px;
         font-size: 18px;
     }
 
     .game-over {
-        font-size: 30px;
+        font-size: 32px;
     }
 
     .score-show {
-        font-size: 15px;
-        padding: 8px 14px;
+        font-size: 16px;
+        padding: 8px 16px;
     }
 }
 
-/* --- Fully Responsive Design for Mobile Phones (max-width: 480px) --- */
 @media (max-width: 480px) {
-    /* Center the heading better */
-    h1 {
-        font-size: 1.8rem;
-        margin-bottom: 12px;
-    }
-
-    #container {
-        height: 80vh;
-        padding: 5px;
-    }
-
     #panel {
         width: 95%;
         height: 80vh;
-        padding: 8px;
     }
 
-    /* Adjust stats layout */
     #panel-top {
-        height: 80px;
-        padding: 0 3%;
+        padding: 0 4%;
     }
 
     .element {
-        width: 60px;
-        height: 60px;
+        width: 65px;
+        height: 65px;
     }
 
     .box {
-        width: 28px;
-        height: 28px;
+        width: 30px;
+        height: 30px;
         font-size: 14px;
     }
 
-    /* Smaller bubbles for better fit */
     .bubble {
-        width: 55px;
-        height: 55px;
+        width: 60px;
+        height: 60px;
         font-size: 16px;
     }
 
-    /* Game over text size */
     .game-over {
-        font-size: 24px;
+        font-size: 26px;
     }
 
-    /* Score display optimized */
     .score-show {
-        font-size: 13px;
-        padding: 6px 12px;
-    }
-}
-
-/* --- Extra Small Mobile Screens (max-width: 360px) --- */
-@media (max-width: 360px) {
-    h1 {
-        font-size: 1.5rem;
-    }
-
-    .bubble {
-        width: 50px;
-        height: 50px;
         font-size: 14px;
+        padding: 6px 14px;
     }
 
-    .game-over {
-        font-size: 20px;
+    h1 {
+        font-size: 2rem;
     }
 }
