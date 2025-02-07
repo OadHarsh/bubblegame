@@ -1,4 +1,7 @@
 var bubble = "";
+const right_audio = new Audio("./audio/rightaudio.mp3"); // Sound for correct bubble
+const wrong_audio = new Audio("./audio/wrongaudio.mp3"); // Sound for incorrect bubble
+
 function bubble_making() {
     // Reset the bubbles string each time a new set is created
     bubble = "";
@@ -7,9 +10,8 @@ function bubble_making() {
 
     for (let i = numbers.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-         [numbers[i], numbers[j]] = [numbers[j], numbers[i]];
+        [numbers[i], numbers[j]] = [numbers[j], numbers[i]];
     }
-
 
     for (let i = 0; i < 30; i++) {
         let num = numbers[i % numbers.length];
@@ -29,19 +31,26 @@ function hit_rn() {
 // Initialize score
 let score = 0;
 
-
 // Check if the clicked bubble matches hit_random
 function check_bubble(val) {
     if (val === hit_random) {
         score += 10; // Increase score by 10
         document.querySelector("#score").textContent = score; // Update the score on the screen
+        
+        // Play correct sound
+        right_audio.currentTime = 0; // Reset sound for instant replay
+        right_audio.play();
+
         hit_rn(); // Generate a new random hit number
         bubble_making(); // Regenerate the bubbles
-    }
-
-    else{
-        score = score - 5 ;
+    } else {
+        score -= 5; // Decrease score by 5
         document.querySelector("#score").textContent = score;
+        
+        // Play incorrect sound
+        wrong_audio.currentTime = 0;
+        wrong_audio.play();
+
         hit_rn(); // Generate a new random hit number
         bubble_making(); // Regenerate the bubbles
     }
@@ -53,18 +62,15 @@ function runtime() {
         if (timer > 0) {
             timer--;
             document.querySelector("#timer").textContent = timer;
-        }
-        else {
+        } else {
             clearInterval(timerx);
-            document.querySelector("#panel-bottom").innerHTML =  `<div class="result-set"><div class="game-over">GAME OVER</div> 
-                                                                  <div class="score-show">SCORE : ${score}</div></div>`
+            document.querySelector("#panel-bottom").innerHTML = `<div class="result-set"><div class="game-over">GAME OVER</div> 
+                                                                  <div class="score-show">SCORE : ${score}</div></div>`;
         }
     }, 1000);
-
-    
 }
 
-//to prevent inspect & right click.
+// Prevent inspect & right-click
 document.addEventListener("contextmenu", function(e) {
     e.preventDefault();
 });
@@ -77,8 +83,6 @@ document.onkeydown = function(e) {
         e.preventDefault();
     }
 };
-
-
 
 // Initialize game
 hit_rn();
