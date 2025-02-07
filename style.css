@@ -159,8 +159,8 @@ h1 {
     }
 
     .element {
-        width: 70px;
-        height: 70px;
+        width: 60px;
+        height: 60px;
     }
 
     .box {
@@ -170,8 +170,8 @@ h1 {
     }
 
     .bubble {
-        width: 55px;
-        height: 55px;
+        width: 50px;
+        height: 50px;
         font-size: 16px;
     }
 }
