@@ -117,8 +117,8 @@ h1 {
 /* --- Bubble Styling --- */
 .bubble {
     margin: 8px;
-    width: 78px;
-    height: 78px;
+    width: 70px;
+    height: 70px;
     background-color: rgb(90, 192, 218);
     border-radius: 50%;
     display: flex;
@@ -135,6 +135,40 @@ h1 {
 .bubble:hover {
     transform: scale(1.12);
     background-color: rgb(67, 162, 187);
+}
+
+.result-set {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.game-over {
+    font-size: 52px;
+    font-weight: bold;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+    animation: blink 0.5s alternate infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes blink {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+}
+
+/* --- Score Display --- */
+.score-show {
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    background: linear-gradient(45deg, #04040488, #3f0d0473);
+    padding: 10px 20px;
+    border-radius: 12px;
+    display: inline-block;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.6);
+    text-align: center;
 }
 
 /* --- Responsive Design for Mobile Devices --- */
@@ -159,8 +193,8 @@ h1 {
     }
 
     .element {
-        width: 60px;
-        height: 60px;
+        width: 70px;
+        height: 70px;
     }
 
     .box {
@@ -170,8 +204,8 @@ h1 {
     }
 
     .bubble {
-        width: 50px;
-        height: 50px;
+        width: 55px;
+        height: 55px;
         font-size: 16px;
     }
 }
